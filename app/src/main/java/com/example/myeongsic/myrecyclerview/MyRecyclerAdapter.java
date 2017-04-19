@@ -1,5 +1,6 @@
 package com.example.myeongsic.myrecyclerview;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,13 +30,13 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 //        ((RowViewHolder)holder).imageView.setImageResource(images[position]);
 //
-//        ((RowViewHolder)holder).itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(),DetailActivity.class);
-//                view.getContext().startActivity(intent);
-//            }
-//        });
+        ((RowViewHolder)holder).itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),DetailActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
 
         Picasso.with(((RowViewHolder)holder).itemView.getContext()) //Context 받아오기
                 .load(ImageClass.imageUrls[position]) // URL 주소로 접속
